@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konversi Hasil Panen</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Konversi Hasil Panen</h2>
+
+      <label for="hasil_ubinan">Hasil Ubinan (6,25m²):</label>
+      <input type="number" id="hasil_ubinan" step="0.01" />
+
+      <label for="luas_lahan">Luas Lahan (Ha):</label>
+      <input type="number" id="luas_lahan" step="0.1" />
+
+      <button id="hitung">Hitung</button>
+
+      <h3>Hasil Konversi</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Hasil Ubinan (6,25m²)</th>
+            <th>Luas Lahan (Ha)</th>
+            <th>GKP/Ha</th>
+            <th>GKG/Ha</th>
+            <th>GKG/Plot</th>
+            <th>Ton GKP</th>
+            <th>Ton GKG</th>
+            <th>Ton Beras</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="resultTable"></tbody>
+      </table>
+
+      <button id="downloadExcel">Unduh Excel</button>
+    </div>
+  </body>
+</html>
